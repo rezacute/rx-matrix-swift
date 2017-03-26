@@ -22,6 +22,9 @@
 //  THE SOFTWARE.
 
 import Foundation
+import RxSwift
+import Alamofire
+import RxAlamofire
 
 public enum UserAuthenticationStatus {
     case NOT_LOGGED, LOGGED, LOGGING
@@ -31,6 +34,10 @@ public struct MXCredential {
     public let username : String
     public let homeserver : String
     public fileprivate(set) var accessToken : String? = nil
+
+    public var mxValidUsername : String {
+        return "@" + self.username + ":" + self.homeserver
+    }
 
     public init(homeserver: String,username:String){
         self.homeserver = homeserver
@@ -49,9 +56,32 @@ open class MXUser: NSObject {
     /// current user authentication status.
     public fileprivate(set) var status : UserAuthenticationStatus = .NOT_LOGGED
 
+    private var credential : MXCredential?
+
     /// Responsible for authenticating
-    public static func authenticate(credential: MXCredential, password : String? = nil, _ completion : ((Error?)->())){
-        //TODO: implementation
+    public static func authenticate(credential: MXCredential, password : String? = nil, _ completion : @escaping ((Error?)->())){
+        //TODO: error handling
+
+        let parameters = [
+            "type":"m.login.password",
+            "user":credential.mxValidUsername,
+            "password":password!
+        ]
+
+        let endpoint: String = "https://" + credential.homeserver + ":8448/_matrix/client/r0/login"
+        Alamofire.request(endpoint, method: .post, parameters: parameters, encoding: JSONEncoding.default)
+            .responseJSON { response in
+
+                if let json = response.result.value as? [String: Any] {
+                    let accessToken = json["access_token"]
+                    debugPrint(accessToken!)
+                    var updatedCredential = credential
+                    updatedCredential.accessToken = accessToken as! String?
+                    MXCurrentUser.status = .LOGGED
+                    MXCurrentUser.credential = updatedCredential
+                }
+                completion(response.error)
+        }
     }
 
 }

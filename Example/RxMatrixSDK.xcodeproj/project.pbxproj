@@ -13,7 +13,6 @@
 		607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 607FACD91AFB9204008FA782 /* Main.storyboard */; };
 		607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDC1AFB9204008FA782 /* Images.xcassets */; };
 		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
-		607FACEC1AFB9204008FA782 /* MXUserStatusTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACEB1AFB9204008FA782 /* MXUserStatusTests.swift */; };
 		AD64B511DE6A31E167EC1AB6 /* Pods_RxMatrixSDK_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5911060BC8C0CA5DD8B533C2 /* Pods_RxMatrixSDK_Tests.framework */; };
 		D522F99B1E87835A00B265E0 /* MXUserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D522F9991E87833600B265E0 /* MXUserTests.swift */; };
 /* End PBXBuildFile section */
@@ -42,7 +41,6 @@
 		607FACDF1AFB9204008FA782 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		607FACE51AFB9204008FA782 /* RxMatrixSDK_Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RxMatrixSDK_Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACEA1AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		607FACEB1AFB9204008FA782 /* MXUserStatusTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MXUserStatusTests.swift; sourceTree = "<group>"; };
 		768779B24279A505697D5713 /* Pods-RxMatrixSDK_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxMatrixSDK_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RxMatrixSDK_Tests/Pods-RxMatrixSDK_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		8CAAF6378B40CE30D0275029 /* Pods-RxMatrixSDK_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxMatrixSDK_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RxMatrixSDK_Example/Pods-RxMatrixSDK_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		94CC681FDC82390CB1FE9993 /* RxMatrixSDK.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = RxMatrixSDK.podspec; path = ../RxMatrixSDK.podspec; sourceTree = "<group>"; };
@@ -118,7 +116,6 @@
 			isa = PBXGroup;
 			children = (
 				D522F9991E87833600B265E0 /* MXUserTests.swift */,
-				607FACEB1AFB9204008FA782 /* MXUserStatusTests.swift */,
 				607FACE91AFB9204008FA782 /* Supporting Files */,
 			);
 			path = Tests;
@@ -373,7 +370,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				607FACEC1AFB9204008FA782 /* MXUserStatusTests.swift in Sources */,
 				D522F99B1E87835A00B265E0 /* MXUserTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
