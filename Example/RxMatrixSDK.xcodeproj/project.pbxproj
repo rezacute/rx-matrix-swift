@@ -13,8 +13,9 @@
 		607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 607FACD91AFB9204008FA782 /* Main.storyboard */; };
 		607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDC1AFB9204008FA782 /* Images.xcassets */; };
 		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
-		607FACEC1AFB9204008FA782 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACEB1AFB9204008FA782 /* Tests.swift */; };
+		607FACEC1AFB9204008FA782 /* MXUserStatusTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACEB1AFB9204008FA782 /* MXUserStatusTests.swift */; };
 		AD64B511DE6A31E167EC1AB6 /* Pods_RxMatrixSDK_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5911060BC8C0CA5DD8B533C2 /* Pods_RxMatrixSDK_Tests.framework */; };
+		D522F99B1E87835A00B265E0 /* MXUserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D522F9991E87833600B265E0 /* MXUserTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,7 +30,7 @@
 
 /* Begin PBXFileReference section */
 		1141144D9EDAC1EA292E61DD /* Pods_RxMatrixSDK_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RxMatrixSDK_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		21FE459F341CA400D5AECEF5 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		21FE459F341CA400D5AECEF5 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		37B715A435C04EA2889DBB7F /* Pods-RxMatrixSDK_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxMatrixSDK_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-RxMatrixSDK_Tests/Pods-RxMatrixSDK_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		5911060BC8C0CA5DD8B533C2 /* Pods_RxMatrixSDK_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RxMatrixSDK_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACD01AFB9204008FA782 /* RxMatrixSDK_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RxMatrixSDK_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -41,12 +42,13 @@
 		607FACDF1AFB9204008FA782 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		607FACE51AFB9204008FA782 /* RxMatrixSDK_Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RxMatrixSDK_Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACEA1AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		607FACEB1AFB9204008FA782 /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
+		607FACEB1AFB9204008FA782 /* MXUserStatusTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MXUserStatusTests.swift; sourceTree = "<group>"; };
 		768779B24279A505697D5713 /* Pods-RxMatrixSDK_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxMatrixSDK_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RxMatrixSDK_Tests/Pods-RxMatrixSDK_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		8CAAF6378B40CE30D0275029 /* Pods-RxMatrixSDK_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxMatrixSDK_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RxMatrixSDK_Example/Pods-RxMatrixSDK_Example.debug.xcconfig"; sourceTree = "<group>"; };
-		94CC681FDC82390CB1FE9993 /* RxMatrixSDK.podspec */ = {isa = PBXFileReference; includeInIndex = 1; name = RxMatrixSDK.podspec; path = ../RxMatrixSDK.podspec; sourceTree = "<group>"; };
+		94CC681FDC82390CB1FE9993 /* RxMatrixSDK.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = RxMatrixSDK.podspec; path = ../RxMatrixSDK.podspec; sourceTree = "<group>"; };
 		9CA0612121E9FEF1EC29B7E2 /* Pods-RxMatrixSDK_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxMatrixSDK_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-RxMatrixSDK_Example/Pods-RxMatrixSDK_Example.release.xcconfig"; sourceTree = "<group>"; };
-		BE25974FFDC799CB33979342 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
+		BE25974FFDC799CB33979342 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
+		D522F9991E87833600B265E0 /* MXUserTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MXUserTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,7 +117,8 @@
 		607FACE81AFB9204008FA782 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
-				607FACEB1AFB9204008FA782 /* Tests.swift */,
+				D522F9991E87833600B265E0 /* MXUserTests.swift */,
+				607FACEB1AFB9204008FA782 /* MXUserStatusTests.swift */,
 				607FACE91AFB9204008FA782 /* Supporting Files */,
 			);
 			path = Tests;
@@ -370,7 +373,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				607FACEC1AFB9204008FA782 /* Tests.swift in Sources */,
+				607FACEC1AFB9204008FA782 /* MXUserStatusTests.swift in Sources */,
+				D522F99B1E87835A00B265E0 /* MXUserTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
