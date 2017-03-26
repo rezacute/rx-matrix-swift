@@ -69,10 +69,10 @@ open class MXUser: NSObject {
         ]
 
         let endpoint: String = "https://" + credential.homeserver + ":8448/_matrix/client/r0/login"
-        Alamofire.request(endpoint, method: .post, parameters: parameters, encoding: JSONEncoding.default)
-            .responseJSON { response in
+        json(.post, endpoint, parameters: parameters, encoding: JSONEncoding.default, headers: nil).observeOn(MainScheduler.instance)
+            .subscribe {
 
-                if let json = response.result.value as? [String: Any] {
+                if let json = $0.element as? [String: Any] {
                     let accessToken = json["access_token"]
                     debugPrint(accessToken!)
                     var updatedCredential = credential
@@ -80,8 +80,10 @@ open class MXUser: NSObject {
                     MXCurrentUser.status = .LOGGED
                     MXCurrentUser.credential = updatedCredential
                 }
-                completion(response.error)
+                completion($0.error)
+                
         }
+
     }
 
 }
