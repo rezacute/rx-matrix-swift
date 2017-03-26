@@ -6,34 +6,26 @@ import RxMatrixSDK
 
 class MXUserSpec: QuickSpec {
     override func spec() {
-        describe("these will fail") {
+        describe("these will login and check the status") {
 
-
-            context("these will pass") {
-
-                it("can do maths") {
-                    expect(23) == 23
-                }
-
-                it("can read") {
-                    expect("🐮") == "🐮"
-                }
-
-                it("will eventually pass") {
-                    var time = "passing"
-
-                    DispatchQueue.main.async {
-                        time = "done"
+            let expectation = self.expectation(description: "expectation")
+            it("should be able to login and change the status") {
+                MXUser.authenticate(credential: MXCredential(homeserver:"https://matrix.org",username:"rxmatrix"), password: "", { (error) in
+                    XCTAssertNil(error)
+                    it("should be LOGGED") {
+                        let expected = UserAuthenticationStatus.LOGGED
+                        expect(expected) == MXUser.currentUser.status
                     }
+                    expectation.fulfill()
+                })
 
-                    waitUntil { done in
-                        Thread.sleep(forTimeInterval: 0.5)
-                        expect(time) == "done"
+                self.waitForExpectations(timeout: 10, handler: { (error) in
+                    XCTAssertNil(error)
+                })
 
-                        done()
-                    }
-                }
             }
+
+
         }
     }
 }

@@ -17,7 +17,7 @@ Pod::Spec.new do |s|
 #   * Write the description between the DESC delimiters below.
 #   * Finally, don't worry about the indent, CocoaPods strips it!
 
-  s.description      = ''
+  s.description      = 'Unoficial matrix.org swift SDK with reactive architecture'
 
   s.homepage         = 'https://github.com/rezacute/rx-matrix-swift'
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
@@ -29,7 +29,15 @@ Pod::Spec.new do |s|
   s.ios.deployment_target = '9.0'
 
   s.source_files = 'RxMatrixSDK/Classes/**/*'
-  
+
+  s.default_subspec = "Core"
+
+  s.subspec "Core" do |ss|
+    ss.source_files  = 'RxMatrixSDK/Classes/*.swift'
+    ss.dependency "RxAlamofire"
+    ss.framework  = "Foundation"
+  end
+
   # s.resource_bundles = {
   #   'RxMatrixSDK' => ['RxMatrixSDK/Assets/*.png']
   # }

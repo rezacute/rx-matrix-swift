@@ -1,9 +1,9 @@
 {
   "name": "RxMatrixSDK",
   "version": "0.1.0",
-  "summary": "A short description of RxMatrixSDK.",
-  "description": "TODO: Add long description of the pod here.",
-  "homepage": "https://github.com/rezacute/RxMatrixSDK",
+  "summary": "Unoficial matrix.org swift SDK with reactive architecture",
+  "description": "Unoficial matrix.org swift SDK with reactive architecture",
+  "homepage": "https://github.com/rezacute/rx-matrix-swift",
   "license": {
     "type": "MIT",
     "file": "LICENSE"
@@ -12,11 +12,24 @@
     "rezacute": "riza.alaudin@kii.com"
   },
   "source": {
-    "git": "https://github.com/rezacute/RxMatrixSDK.git",
+    "git": "https://github.com/rezacute/rx-matrix-swift.git",
     "tag": "0.1.0"
   },
   "platforms": {
-    "ios": "8.0"
+    "ios": "9.0"
   },
-  "source_files": "RxMatrixSDK/Classes/**/*"
+  "source_files": "RxMatrixSDK/Classes/**/*",
+  "default_subspecs": "Core",
+  "subspecs": [
+    {
+      "name": "Core",
+      "source_files": "RxMatrixSDK/Classes/*.swift",
+      "dependencies": {
+        "RxAlamofire": [
+
+        ]
+      },
+      "frameworks": "Foundation"
+    }
+  ]
 }

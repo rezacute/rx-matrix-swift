@@ -28,9 +28,14 @@ public enum UserAuthenticationStatus {
 }
 
 public struct MXCredential {
-    public var username : String
-    public var homeserver : String
+    public let username : String
+    public let homeserver : String
     public fileprivate(set) var accessToken : String? = nil
+
+    public init(homeserver: String,username:String){
+        self.homeserver = homeserver
+        self.username = username
+    }
 }
 
 /// Represent Matrix User
@@ -45,7 +50,7 @@ open class MXUser: NSObject {
     public fileprivate(set) var status : UserAuthenticationStatus = .NOT_LOGGED
 
     /// Responsible for authenticating
-    public static func authenticate(credential: MXCredential, _ password : String? = nil, completion : ((Error)->())){
+    public static func authenticate(credential: MXCredential, password : String? = nil, _ completion : ((Error?)->())){
         //TODO: implementation
     }
 
