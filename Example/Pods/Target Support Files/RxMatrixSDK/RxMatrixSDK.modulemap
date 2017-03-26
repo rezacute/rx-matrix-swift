@@ -1,0 +1,6 @@
+framework module RxMatrixSDK {
+  umbrella header "RxMatrixSDK-umbrella.h"
+
+  export *
+  module * { export * }
+}

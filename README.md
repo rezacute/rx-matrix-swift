@@ -22,7 +22,7 @@ pod "RxMatrixSDK"
 
 ## Author
 
-rezacute, riza.alaudin@kii.com
+rezacute, rezaqt@gmail.com
 
 ## License
 
